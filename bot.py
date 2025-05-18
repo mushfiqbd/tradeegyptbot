@@ -3,15 +3,20 @@ import asyncio
 import time
 import sqlite3
 import requests
+import os
 from datetime import datetime
 from telethon.sync import TelegramClient
 from telebot import TeleBot
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # === CONFIG === #
-API_ID = 29584645
-API_HASH = '7ca25762b3e7e6b3110701394d5a291b'
-BOT_TOKEN = '7877776926:AAEYLkI87OEpdIBgi4fjMl0ACnvDOALqyAI'
-ADMIN_ID = 7685364015
+API_ID = int(os.getenv('API_ID'))
+API_HASH = os.getenv('API_HASH')
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+ADMIN_ID = int(os.getenv('ADMIN_ID'))
 CHANNEL_USERNAMES = ['early100xgems', 'BullishCallsPremium', 'solearlytrending']
 
 print("🚀 Bot is starting...")
